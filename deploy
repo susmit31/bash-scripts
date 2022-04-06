@@ -23,4 +23,5 @@ if [ $execute -eq 1 ]
 then
 	echo "Copying to /usr/local/bin ..."
 	sudo cp $script_name/$script_name /usr/local/bin/$script_name
+	echo "Done!"
 fi
