@@ -10,6 +10,9 @@ do
 	if [ "$selection" == "/b/" ]
 	then
 		fullpath=$(dirname "$fullpath")
+	elif [ "$selection" == "/q" ]
+	then
+		exit
 	else
 		fullpath="$fullpath/$selection"
 	fi
