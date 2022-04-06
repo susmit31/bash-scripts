@@ -7,7 +7,12 @@ fullpath="$1/$selection"
 while [ -d "$fullpath" ]
 do
 	selection=$(ls $fullpath | rofi -dmenu)
-	fullpath="$fullpath/$selection"
+	if [ "$selection" == "b" ]
+	then
+		fullpath=$(dirname $(pwd))
+	else
+		fullpath="$fullpath/$selection"
+	fi
 done
 
 extension=$(echo $selection | awk -F. '{print $NF}')
