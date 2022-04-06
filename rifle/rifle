@@ -9,7 +9,7 @@ do
 	selection=$(ls $fullpath | rofi -dmenu)
 	if [ "$selection" == "/b/" ]
 	then
-		fullpath=$(dirname $(pwd))
+		fullpath=$(dirname "$fullpath")
 	else
 		fullpath="$fullpath/$selection"
 	fi
