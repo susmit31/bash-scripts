@@ -7,7 +7,7 @@ fullpath="$1/$selection"
 while [ -d "$fullpath" ]
 do
 	selection=$(ls $fullpath | rofi -dmenu)
-	if [ "$selection" == "b" ]
+	if [ "$selection" == "/b/" ]
 	then
 		fullpath=$(dirname $(pwd))
 	else
