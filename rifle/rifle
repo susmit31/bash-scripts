@@ -1,0 +1,16 @@
+#!/bin/bash
+
+selection=$(ls $1 | rofi -dmenu)
+
+fullpath="$1/$selection"
+
+while [ -d "$fullpath" ]
+do
+	selection=$(ls $fullpath | rofi -dmenu)
+	fullpath="$fullpath/$selection"
+done
+
+if [ "pdf" == $(echo $selection | awk -F. '{print $NF}') ]
+then
+	firefox "$fullpath"
+fi
