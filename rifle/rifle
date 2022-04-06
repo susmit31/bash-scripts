@@ -10,7 +10,15 @@ do
 	fullpath="$fullpath/$selection"
 done
 
-if [ "pdf" == $(echo $selection | awk -F. '{print $NF}') ]
+extension=$(echo $selection | awk -F. '{print $NF}')
+echo $extension
+
+if [ $extension == "pdf" ]
 then
 	firefox "$fullpath"
+elif [ $extension == "png" ]
+then 
+	xclip -sel clip -target image/$extension -i $fullpath
+else
+	echo "We don't do that here"
 fi
