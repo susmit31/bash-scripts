@@ -1,8 +1,9 @@
 # Rifle
 A small file browser written with Rofi and GNU ls that I wrote so that I could
- throw away my file manager. Specifically written for catering my only need 
- for file managers, that is, browsing the file system for PDFs and opening them 
- up in Firefox.
+ throw away my file manager (which I still can't do because I can't figure out
+ a way to replace their drag-and-drop functionality). Specifically written
+ for catering my only need for file managers, that is, browsing the file
+ system for PDFs and opening them up in Firefox.
  
 ## Installation
 ```
