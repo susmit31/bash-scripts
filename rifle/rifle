@@ -23,10 +23,16 @@ echo $extension
 
 if [ $extension == "pdf" ]
 then
-	firefox "$fullpath"
+	choice=$(echo "Open|Copy" | rofi -sep "|" -dmenu -p "$selection")
+	if [  $choice == "Open" ]
+	then
+		firefox "$fullpath"
+	else
+		xclip -sel clip -target text/pdf -i "$fullpath"
+	fi
 elif [ $extension == "png" ]
 then 
-	xclip -sel clip -target image/$extension -i $fullpath
+	xclip -sel clip -target image/$extension -i "$fullpath"
 else
 	echo "We don't do that here"
 fi
