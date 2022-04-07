@@ -20,16 +20,17 @@ echo $extension
 
 if [ $extension == "pdf" ]
 then
-	choice=$(echo "Open|Copy" | rofi -sep "|" -dmenu -p "$selection")
-	if [  $choice == "Open" ]
+	choice=$(echo "Read|Open folder in Thunar" | rofi -sep "|" -dmenu -p "$selection")
+	if [  $choice == "Read" ]
 	then
 		firefox "$fullpath"
 	else
-		xclip -sel clip -target file/pdf -i "$fullpath"
+		thunar "$(dirname $fullpath)"
 	fi
 elif [ $extension == "png" ]
 then 
 	xclip -sel clip -target image/$extension -i "$fullpath"
+	echo "Image $selection copied to clipboard"
 else
 	echo "We don't do that here"
 fi
