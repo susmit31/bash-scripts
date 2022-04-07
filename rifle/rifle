@@ -15,6 +15,7 @@ do
 		fullpath=$(dirname "$fullpath")
 	elif [ "$selection" == "/q/" ]
 	then
+		echo "Quit"
 		exit
 	else
 		fullpath="$fullpath/$selection"
@@ -30,6 +31,10 @@ then
 	if [ "$choice" == "Read" ]
 	then
 		firefox "$fullpath"
+	elif [ "$choice" == "/q/" ]
+	then
+		echo "Quit"
+		exit
 	else
 		thunar "$(dirname $fullpath)"
 	fi
