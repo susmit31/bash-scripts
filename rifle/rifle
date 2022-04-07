@@ -2,6 +2,7 @@
 if [ -z "$1" ]
 then
 	echo "Usage: rifle <DIRECTORY>"
+	exit
 fi
 
 fullpath="$1"
