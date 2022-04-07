@@ -1,4 +1,9 @@
 #!/bin/bash
+if [ -z "$1" ]
+then
+	echo "Usage: rifle <DIRECTORY>"
+fi
+
 fullpath="$1"
 
 while [ -d "$fullpath" ]
