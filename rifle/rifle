@@ -9,7 +9,7 @@ fullpath="$1"
 
 while [ -d "$fullpath" ]
 do
-	selection=$(ls $fullpath | rofi -dmenu -p "Search for a file")
+	selection=$(ls $fullpath | rofi -dmenu -i -p "Search for a file")
 	if [ "$selection" == "/b/" ]
 	then
 		fullpath=$(dirname "$fullpath")
@@ -26,7 +26,7 @@ echo $extension
 
 if [ $extension == "pdf" ]
 then
-	choice=$(echo "Read|Open folder in Thunar" | rofi -sep "|" -dmenu -p "$selection")
+	choice=$(echo "Read|Open folder in Thunar" | rofi -sep "|" -dmenu -i -p "$selection")
 	if [ "$choice" == "Read" ]
 	then
 		firefox "$fullpath"
