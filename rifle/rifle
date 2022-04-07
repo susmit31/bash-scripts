@@ -27,7 +27,7 @@ echo $extension
 if [ $extension == "pdf" ]
 then
 	choice=$(echo "Read|Open folder in Thunar" | rofi -sep "|" -dmenu -p "$selection")
-	if [ $choice == "Read" ]
+	if [ "$choice" == "Read" ]
 	then
 		firefox "$fullpath"
 	else
