@@ -1,12 +1,9 @@
 #!/bin/bash
-
-selection=$(ls $1 | rofi -dmenu)
-
-fullpath="$1/$selection"
+fullpath="$1"
 
 while [ -d "$fullpath" ]
 do
-	selection=$(ls $fullpath | rofi -dmenu)
+	selection=$(ls $fullpath | rofi -dmenu -p "Search for a file")
 	if [ "$selection" == "/b/" ]
 	then
 		fullpath=$(dirname "$fullpath")
@@ -28,7 +25,7 @@ then
 	then
 		firefox "$fullpath"
 	else
-		xclip -sel clip -target text/pdf -i "$fullpath"
+		xclip -sel clip -target file/pdf -i "$fullpath"
 	fi
 elif [ $extension == "png" ]
 then 
