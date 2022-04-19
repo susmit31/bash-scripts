@@ -8,7 +8,7 @@ then
 	if [ -z "$3" ]
 	then
 		echo "Enter a commit message: "
-		commit_msg=read
+		read commit_msg
 	fi
 	git commit -m "$commit_msg"
 	git push -u origin master
