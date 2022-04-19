@@ -4,7 +4,13 @@ execute=1
 if [ "$1" == "-g" -o "$1" == "-gd" -o "$1" == "-dg" ]
 then 
 	git add .
-	git commit -m "$3"
+	commit_msg=$3
+	if [ -z "$3" ]
+	then
+		echo "Enter a commit message: "
+		commit_msg=read
+	fi
+	git commit -m "$commit_msg"
 	git push -u origin master
 	script_name="$2"
 	if [ "$1" == "-g" ]

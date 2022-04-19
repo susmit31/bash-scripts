@@ -30,7 +30,7 @@ then
 	choice=$(echo "Read|Open folder in Thunar" | rofi -sep "|" -dmenu -i -p "$selection")
 	if [ "$choice" == "Read" ]
 	then
-		firefox "$fullpath"
+		brave-browser "$fullpath"
 	elif [ "$choice" == "/q/" ]
 	then
 		echo "Quit"
