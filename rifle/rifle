@@ -7,6 +7,11 @@ fi
 
 fullpath="$1"
 
+if [ "$1" == "." ]
+then
+	fullpath="$(pwd)"
+fi
+
 while [ -d "$fullpath" ]
 do
 	selection=$(ls $fullpath | rofi -dmenu -i -p "Search for a file")
