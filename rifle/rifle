@@ -31,7 +31,8 @@ then
 	if [ "$choice" == "Read" ]
 	then
 		#brave-browser "$fullpath"
-		firefox "$fullpath"
+		#firefox "$fullpath"
+		FoxitReader "$fullpath"
 	elif [ "$choice" == "/q/" ]
 	then
 		echo "Quit"
